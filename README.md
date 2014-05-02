@@ -42,6 +42,14 @@ GoogleSearch also comes with a facade, which provides an easy way to call the th
 )
 ```
 
+You can publish the config file of the package using artisan
+
+```bash
+php artisan config:publish spatie/googlesearch
+```
+
+This command creates a file within your app/config directory in which you can specify the id of the Custom Search Engine you want to use.
+
 ## Usage
 
 coming soon...
