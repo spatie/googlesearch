@@ -1,0 +1,32 @@
+{
+    "name": "spatie/googlesearch",
+    "description": "Get searchresults from a Google Custom Search Engine",
+    "keywords":
+        [
+            "search",
+            "google",
+            "custom",
+            "engine",
+            "laravel"
+        ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Freek Van der Herten",
+            "email": "freek@spatie.be"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "illuminate/support": "4.1.*"
+    },
+    "require-dev": {
+        "phpspec/phpspec": "2.0.*@dev"
+    },
+    "autoload": {
+        "psr-0": {
+            "Spatie\\Googlesearch": "src/"
+        }
+    },
+    "minimum-stability": "stable"
+}
