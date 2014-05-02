@@ -1,6 +1,6 @@
 <?php namespace Spatie\GoogleSearch;
 
-use Spatie\Services\GoogleSearch\Interfaces\GoogleSearchInterface;
+use Spatie\GoogleSearch\Interfaces\GoogleSearchInterface;
 
 class GoogleSearch implements GoogleSearchInterface {
     protected $searchEngineId;
