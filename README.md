@@ -64,3 +64,5 @@ GoogleSearch::getResults('The meaning of life');
   "snippet"  //a little piece of text found on the page
 */
 ```
+
+When no results are found an empty array is returned.
