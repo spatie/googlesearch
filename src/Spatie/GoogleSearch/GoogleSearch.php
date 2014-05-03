@@ -10,8 +10,24 @@ class GoogleSearch implements GoogleSearchInterface {
          $this->searchEngineId = $searchEngineId;
     }
 
+    /**
+     *
+     * Get results from a Google Custom Search Engine
+     *
+     * @param string $query
+     * @return array An associative array of the parsed comment, whose keys are `name`,
+     *         `url` and `snippet`
+     */
     public function getResults($query) {
+
+        $searchResults = [];
+
+        if ($query == '') {
+            return $searchResults;
+        }
+
         $url = "http://www.google.com/cse?cx=" . $this->searchEngineId . "&client=google-csbe&num=20&output=xml_no_dtd&q=" . $query;
+
         $curl = curl_init();
         curl_setopt($curl, CURLOPT_URL,$url);
         curl_setopt($curl, CURLOPT_FAILONERROR, 1);
@@ -22,11 +38,10 @@ class GoogleSearch implements GoogleSearchInterface {
 //submit the xml request and get the response
         $result = curl_exec($curl);
         curl_close($curl);
+        dd($result);
 
 //now parse the xml with
         $xml = simplexml_load_string($result);
-
-        $searchResults = [];
 
         if ($xml->RES->R) {
             $i=0;
