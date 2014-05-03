@@ -37,8 +37,10 @@ class GoogleSearch implements GoogleSearchInterface {
 
 //submit the xml request and get the response
         $result = curl_exec($curl);
+        if(! $result) {
+            throw new \Exception('could not get results');
+        }
         curl_close($curl);
-        dd($result);
 
 //now parse the xml with
         $xml = simplexml_load_string($result);

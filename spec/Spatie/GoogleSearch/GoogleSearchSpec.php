@@ -21,14 +21,10 @@ class GoogleSearchSpec extends ObjectBehavior
         $this->getResults('')->shouldHaveCount(0);
     }
 
-    /*
-     * still figuring out how to simulate a curl call. If you know how to, please give me a call!
-     *
-    function it_should_return_an_array_when_called_with_a_valid_query()
+    function it_should_throw_an_exception_when_no_valid_engine_id_is_set()
     {
-        $result = $this->getResults('test');
-        $result->shouldHaveKey('url');
+
+        $this->shouldThrow(new \Exception("could not get results"))->during('getResults', ['test-query']);
 
     }
-    */
 }
