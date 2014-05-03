@@ -57,14 +57,14 @@ This command creates a file within your app/config directory in which you can sp
 Here is a sample call to get search results:
 
 ```php
-$searchResults = GoogleSearch::getResults('The meaning of life');
-
 /* 
   This function returns an array with keys
   "name"     //the name of the found page
   "url"      //the url of the found page
   "snippet"  //a little piece of text found on the page
 */
+
+$searchResults = GoogleSearch::getResults('The meaning of life');
 ```
 
 When no results are found an empty array is returned.
