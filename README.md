@@ -62,5 +62,5 @@ GoogleSearch::getResults('The meaning of life')
   "name"     //the name of the found page
   "url"      //the url of the found page
   "snippet"  //a little piece of text found on the page
-
+*/
 ```
