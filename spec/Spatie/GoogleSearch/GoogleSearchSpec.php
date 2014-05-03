@@ -22,6 +22,8 @@ class GoogleSearchSpec extends ObjectBehavior
     }
 
     /*
+     * still figuring out how to simulate a curl call. If you know how to, please give me a call!
+     *
     function it_should_return_an_array_when_called_with_a_valid_query()
     {
         $result = $this->getResults('test');
