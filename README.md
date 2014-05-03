@@ -38,7 +38,7 @@ GoogleSearch also comes with a facade, which provides an easy way to call the th
 
 'aliases' => array(
 	...
-	'GoogleSearch' => 'Spatie\GoogleSearch\GoogleSearchFacade',
+	'GoogleSearch' => 'Spatie\GoogleSearch\Facades\GoogleSearchFacade',
 )
 ```
 
