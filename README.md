@@ -65,7 +65,7 @@ Here is a sample call to get search results:
   "snippet"  // a little piece of text found on the page
 */
 
-$searchResults = GoogleSearch::getResults('The meaning of life');
+$searchResults = GoogleSearch::getResults('The meaning of life'); // is 42
 ```
 
 When no results are found an empty array is returned.
