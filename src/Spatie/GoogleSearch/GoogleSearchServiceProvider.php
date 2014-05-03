@@ -6,9 +6,11 @@ class GoogleSearchServiceProvider extends ServiceProvider {
 
     public function register()
     {
+        $this->package('spatie/googlesearch');
+
         $this->app->bind('googleSearch', function()
         {
-            return new GoogleSearch(Config::get('googleSearch.searchEngineId'));
+            return new GoogleSearch(Config::get('googlesearch::googleSearch.searchEngineId'));
         });
     }
 
