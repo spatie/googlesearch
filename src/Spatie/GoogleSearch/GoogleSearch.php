@@ -26,7 +26,7 @@ class GoogleSearch implements GoogleSearchInterface {
             return $searchResults;
         }
 
-        $url = "http://www.google.com/cse?cx=" . $this->searchEngineId . "&client=google-csbe&num=20&output=xml_no_dtd&q=" . $query;
+        $url = "http://www.google.com/cse?cx=" . $this->searchEngineId . "&client=google-csbe&num=20&output=xml_no_dtd&q=" . urlencode($query);
 
         $curl = curl_init();
         curl_setopt($curl, CURLOPT_URL,$url);
