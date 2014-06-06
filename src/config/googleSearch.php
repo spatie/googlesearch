@@ -1,2 +1,2 @@
 <?php
-return ['searchEngineId' => ''];
+return array('searchEngineId' => '');

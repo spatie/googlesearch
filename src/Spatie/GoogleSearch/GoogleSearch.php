@@ -20,7 +20,7 @@ class GoogleSearch implements GoogleSearchInterface {
      */
     public function getResults($query) {
 
-        $searchResults = [];
+        $searchResults = array();
 
         if ($query == '') {
             return $searchResults;
