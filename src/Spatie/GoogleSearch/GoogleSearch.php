@@ -1,13 +1,14 @@
 <?php namespace Spatie\GoogleSearch;
 
 use Spatie\GoogleSearch\Interfaces\GoogleSearchInterface;
+use GuzzleHttp\Client;
 
 class GoogleSearch implements GoogleSearchInterface {
     protected $searchEngineId;
     protected $query;
 
     public function __construct($searchEngineId) {
-         $this->searchEngineId = $searchEngineId;
+        $this->searchEngineId = $searchEngineId;
     }
 
     /**
@@ -20,30 +21,33 @@ class GoogleSearch implements GoogleSearchInterface {
      */
     public function getResults($query) {
 
-        $searchResults = array();
+        $searchResults = [];
 
         if ($query == '') {
             return $searchResults;
         }
 
-        $url = "http://www.google.com/cse?cx=" . $this->searchEngineId . "&client=google-csbe&num=20&output=xml_no_dtd&q=" . urlencode($query);
-
-        $curl = curl_init();
-        curl_setopt($curl, CURLOPT_URL,$url);
-        curl_setopt($curl, CURLOPT_FAILONERROR, 1);
-        curl_setopt($curl, CURLOPT_FOLLOWLOCATION, 1);// allow redirects
-        curl_setopt($curl, CURLOPT_RETURNTRANSFER,1); // return into a variable
-        curl_setopt($curl, CURLOPT_TIMEOUT, 3); // times out after 4s
-
-//submit the xml request and get the response
-        $result = curl_exec($curl);
-        if(! $result) {
-            throw new \Exception('could not get results');
+        if ($this->searchEngineId == '') {
+            throw new \Exception('You must specify a searchEngineId');
         }
-        curl_close($curl);
 
-//now parse the xml with
-        $xml = simplexml_load_string($result);
+        $client = new Client();
+        $result = $client->get('http://www.google.com/cse', ['query' =>
+
+            ['cx'=> $this->searchEngineId,
+                'client'=> 'google-csbe',
+                'num' => 20,
+                'output'=> 'xml_no_dtd',
+                'q'=> $query
+            ]
+        ]);
+
+
+        if ($result->getStatusCode() != 200) {
+            throw new \Exception('Resultcode was not ok: ' . $result->getStatusCode());
+        }
+
+        $xml = simplexml_load_string($result->getBody());
 
         if ($xml->RES->R) {
             $i=0;
