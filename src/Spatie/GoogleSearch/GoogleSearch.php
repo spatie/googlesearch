@@ -63,6 +63,8 @@ class GoogleSearch implements GoogleSearchInterface {
                 $searchResults[$i]['product']['brand'] = $this->getPageMapProperty($item, 'product', 'brand');
                 $searchResults[$i]['product']['price'] = $this->getPageMapProperty($item, 'product', 'price');
                 $searchResults[$i]['product']['image'] = $this->getPageMapProperty($item, 'product', 'image');
+                $searchResults[$i]['product']['identifier'] = $this->getPageMapProperty($item, 'product', 'identifier');
+
                 $searchResults[$i]['offer']['price'] = $this->getPageMapProperty($item, 'offer', 'price');
                 $searchResults[$i]['offer']['pricecurrency'] = $this->getPageMapProperty($item, 'offer', 'pricecurrency');
 
