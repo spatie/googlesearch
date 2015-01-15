@@ -11,12 +11,8 @@ You'll need to know [how to set up a Google Custom Search Engine](https://suppor
 
 This package can be installed through Composer.
 
-```js
-{
-    "require": {
-		"spatie/googlesearch": "dev-master"
-	}
-}
+```
+composer require spatie/googlesearch
 ```
 
 When using Laravel there is a service provider that you can make use of.
