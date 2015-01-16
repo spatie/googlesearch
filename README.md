@@ -1,6 +1,7 @@
 # Get searchresults from a Google Custom Search Engine
 
 [![Build Status](https://secure.travis-ci.org/freekmurze/googlesearch.png)](http://travis-ci.org/freekmurze/googlesearch)
+[![Total Downloads](https://poser.pugx.org/spatie/googlesearch/downloads.svg)](https://packagist.org/packages/spatie/googlesearch)
 [![Latest Stable Version](https://poser.pugx.org/spatie/googlesearch/version.png)](https://packagist.org/packages/spatie/googlesearch)
 [![License](https://poser.pugx.org/spatie/googlesearch/license.png)](https://packagist.org/packages/spatie/googlesearch)
 
