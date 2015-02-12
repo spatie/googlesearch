@@ -2,6 +2,7 @@
 
 [![Build status](https://img.shields.io/travis/freekmurze/googlesearch.svg)](https://travis-ci.org/freekmurze/googlesearch)
 [![Latest Version](https://img.shields.io/github/release/freekmurze/googlesearch.svg?style=flat-square)](https://github.com/freekmurze/googlesearch/releases)
+[![SensioLabsInsight](https://img.shields.io/sensiolabs/i/9d5bf74c-2cc0-42bd-9800-5be2c2f034b7.svg)](https://insight.sensiolabs.com/projects/9d5bf74c-2cc0-42bd-9800-5be2c2f034b7)
 [![Quality Score](https://img.shields.io/scrutinizer/g/freekmurze/googlesearch.svg?style=flat-square)](https://scrutinizer-ci.com/g/freekmurze/googlesearch)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
 [![Total Downloads](https://img.shields.io/packagist/dt/spatie/googlesearch.svg?style=flat-square)](https://packagist.org/packages/spatie/googlesearch)
