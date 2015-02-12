@@ -11,14 +11,19 @@
 This package can fetch results from a Google Custom Search Engine. It returns an array with searchresults.
 You'll need to know [how to set up a Google Custom Search Engine](https://support.google.com/customsearch/answer/2630963?hl=en).
 
+## Laravel compatibility
+
+ Laravel  | googlesearch
+:---------|:----------
+ 4.2.x    | 1.x
+ 5.x      | 2.x
+
 ## Installation
 
 This package can be installed through Composer.
 
 ```bash
-
 composer require spatie/googlesearch
-
 ```
 
 When using Laravel there is a service provider that you can make use of.
