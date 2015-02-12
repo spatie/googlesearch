@@ -40,16 +40,17 @@ GoogleSearch also comes with a facade, which provides an easy way to call the th
 
 // Laravel 5: config/app.php
 
-'aliases' => array(
+'aliases' => [
 	...
 	'GoogleSearch' => 'Spatie\GoogleSearch\Facades\GoogleSearch',
-)
+	...
+]
 ```
 
 You can publish the config file of the package using artisan
 
 ```bash
-php artisan vendor:publish --provider="Spatie\GoogleSearch\Facades\GoogleSearch"
+php artisan vendor:publish --provider="Spatie\GoogleSearch\GoogleSearchServiceProvider"
 ```
 
 This command creates a file within your config directory in which you can specify the id of the Custom Search Engine you want to use.
