@@ -2,7 +2,8 @@
 
 use Illuminate\Support\Facades\Facade;
 
-class GoogleSearch extends Facade {
+class GoogleSearch extends Facade
+{
 
     /**
      * Get the registered name of the component.
@@ -11,8 +12,6 @@ class GoogleSearch extends Facade {
      */
     protected static function getFacadeAccessor()
     {
-
         return 'googleSearch';
     }
-
 }

@@ -4,11 +4,13 @@ use Exception;
 use Spatie\GoogleSearch\Interfaces\GoogleSearchInterface;
 use GuzzleHttp\Client;
 
-class GoogleSearch implements GoogleSearchInterface {
+class GoogleSearch implements GoogleSearchInterface
+{
     protected $searchEngineId;
     protected $query;
 
-    public function __construct($searchEngineId) {
+    public function __construct($searchEngineId)
+    {
         $this->searchEngineId = $searchEngineId;
     }
 
@@ -16,13 +18,13 @@ class GoogleSearch implements GoogleSearchInterface {
      *
      * Get results from a Google Custom Search Engine
      *
-     * @param string $query
-     * @return array An associative array of the parsed comment, whose keys are `name`,
-     *         `url` and `snippet` and some others
+     * @param  string    $query
+     * @return array     An associative array of the parsed comment, whose keys are `name`,
+     *                         `url` and `snippet` and some others
      * @throws Exception
      */
-    public function getResults($query) {
-
+    public function getResults($query)
+    {
         $searchResults = [];
 
         if ($query == '') {
@@ -34,29 +36,26 @@ class GoogleSearch implements GoogleSearchInterface {
         }
 
         $client = new Client();
-        $result = $client->get('http://www.google.com/cse', ['query' =>
-
-            ['cx'=> $this->searchEngineId,
-                'client'=> 'google-csbe',
+        $result = $client->get('http://www.google.com/cse', ['query' => ['cx' => $this->searchEngineId,
+                'client' => 'google-csbe',
                 'num' => 20,
-                'output'=> 'xml_no_dtd',
-                'q'=> $query
-            ]
+                'output' => 'xml_no_dtd',
+                'q' => $query,
+            ],
         ]);
 
-
         if ($result->getStatusCode() != 200) {
-            throw new Exception('Resultcode was not ok: ' . $result->getStatusCode());
+            throw new Exception('Resultcode was not ok: '.$result->getStatusCode());
         }
 
         $xml = simplexml_load_string($result->getBody());
 
         if ($xml->RES->R) {
-            $i=0;
+            $i = 0;
             foreach ($xml->RES->R as $item) {
-                $searchResults[$i]['name'] = (string)$item->T;
-                $searchResults[$i]['url'] = (string)$item->U;
-                $searchResults[$i]['snippet'] = (string)$item->S;
+                $searchResults[$i]['name'] = (string) $item->T;
+                $searchResults[$i]['url'] = (string) $item->U;
+                $searchResults[$i]['snippet'] = (string) $item->S;
                 $searchResults[$i]['image'] = $this->getPageMapProperty($item, 'cse_image', 'src');
 
                 $searchResults[$i]['product']['name'] = $this->getPageMapProperty($item, 'product', 'name');
@@ -85,13 +84,12 @@ class GoogleSearch implements GoogleSearchInterface {
      */
     public function getPageMapProperty($item, $type, $attribute)
     {
-        $propertyArray = $item->PageMap->xpath('DataObject[@type="' . $type . '"]/Attribute[@name="' . $attribute . '"]/@value');
+        $propertyArray = $item->PageMap->xpath('DataObject[@type="'.$type.'"]/Attribute[@name="'.$attribute.'"]/@value');
 
-        if (! count($propertyArray))
-        {
+        if (! count($propertyArray)) {
             return '';
         }
 
-        return (string)$propertyArray[0];
+        return (string) $propertyArray[0];
     }
 }
