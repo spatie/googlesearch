@@ -1,16 +1,21 @@
 <?php namespace Spatie\GoogleSearch;
 use Illuminate\Support\ServiceProvider;
-use Config;
 
 class GoogleSearchServiceProvider extends ServiceProvider {
 
+    public function boot()
+    {
+        $this->publishes([
+            __DIR__.'/../../config/googleSearch.php' => config_path('googleSearch.php'),
+        ]);
+    }
+
     public function register()
     {
-        $this->package('spatie/googlesearch');
-
         $this->app->bind('googleSearch', function()
         {
-            return new GoogleSearch(Config::get('googlesearch::googleSearch.searchEngineId'));
+            $googlesearchConfig = config('googleSearch');
+            return new GoogleSearch($googlesearchConfig['searchEngineId']);
         });
     }
 

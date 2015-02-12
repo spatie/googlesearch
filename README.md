@@ -1,7 +1,6 @@
 # Get searchresults from a Google Custom Search Engine
 
 [![Build Status](https://secure.travis-ci.org/freekmurze/googlesearch.png)](http://travis-ci.org/freekmurze/googlesearch)
-[![Total Downloads](https://poser.pugx.org/spatie/googlesearch/downloads.svg)](https://packagist.org/packages/spatie/googlesearch)
 [![Latest Stable Version](https://poser.pugx.org/spatie/googlesearch/version.png)](https://packagist.org/packages/spatie/googlesearch)
 [![License](https://poser.pugx.org/spatie/googlesearch/license.png)](https://packagist.org/packages/spatie/googlesearch)
 
@@ -12,15 +11,17 @@ You'll need to know [how to set up a Google Custom Search Engine](https://suppor
 
 This package can be installed through Composer.
 
-```
+```bash
+
 composer require spatie/googlesearch
+
 ```
 
 When using Laravel there is a service provider that you can make use of.
 
 ```php
 
-// app/config/app.php
+// Laravel 5: config/app.php
 
 'providers' => [
     '...',
@@ -33,7 +34,7 @@ GoogleSearch also comes with a facade, which provides an easy way to call the th
 
 ```php
 
-// app/config/app.php
+// Laravel 5: config/app.php
 
 'aliases' => array(
 	...
@@ -44,10 +45,10 @@ GoogleSearch also comes with a facade, which provides an easy way to call the th
 You can publish the config file of the package using artisan
 
 ```bash
-php artisan config:publish spatie/googlesearch
+php artisan vendor:publish --provider="Spatie\GoogleSearch\Facades\GoogleSearch"
 ```
 
-This command creates a file within your app/config directory in which you can specify the id of the Custom Search Engine you want to use.
+This command creates a file within your config directory in which you can specify the id of the Custom Search Engine you want to use.
 
 ## Usage
 
