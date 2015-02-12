@@ -1,10 +1,10 @@
 # Get searchresults from a Google Custom Search Engine
 
 [![Build status](https://img.shields.io/travis/freekmurze/googlesearch.svg)](https://travis-ci.org/freekmurze/googlesearch)
-[![Total Downloads](https://img.shields.io/packagist/dt/spatie/googlesearch.svg?style=flat-square)](https://packagist.org/packages/spatie/googlesearch)
 [![Latest Version](https://img.shields.io/github/release/freekmurze/googlesearch.svg?style=flat-square)](https://github.com/freekmurze/googlesearch/releases)
 [![Quality Score](https://img.shields.io/scrutinizer/g/freekmurze/googlesearch.svg?style=flat-square)](https://scrutinizer-ci.com/g/freekmurze/googlesearch)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
+[![Total Downloads](https://img.shields.io/packagist/dt/spatie/googlesearch.svg?style=flat-square)](https://packagist.org/packages/spatie/googlesearch)
 
 This package can fetch results from a Google Custom Search Engine. It returns an array with searchresults.
 You'll need to know [how to set up a Google Custom Search Engine](https://support.google.com/customsearch/answer/2630963?hl=en).
