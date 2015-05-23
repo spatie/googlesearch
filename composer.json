@@ -1,6 +1,7 @@
 {
     "name": "spatie/googlesearch",
     "description": "Get searchresults from a Google Custom Search Engine",
+    "homepage": "https://github.com/spatie/googlesearch",
     "keywords":
         [
             "search",
