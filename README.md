@@ -11,6 +11,8 @@
 This package can fetch results from a Google Custom Search Engine. It returns an array with searchresults.
 You'll need to know [how to set up a Google Custom Search Engine](https://support.google.com/customsearch/answer/2630963?hl=en).
 
+Spatie is webdesign agency in Antwerp, Belgium. You'll find an overview of all our open source projects [on our website](https://spatie.be/opensource).
+
 ## Laravel compatibility
 
  Laravel  | googlesearch
@@ -77,3 +79,6 @@ $searchResults = GoogleSearch::getResults('The meaning of life'); // is 42
 ```
 
 When no results are found an empty array is returned.
+
+##About Spatie
+Spatie is webdesign agency in Antwerp, Belgium. You'll find an overview of all our open source projects [on our website](https://spatie.be/opensource).
