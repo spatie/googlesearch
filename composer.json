@@ -1,5 +1,6 @@
 {
     "name": "spatie/googlesearch",
+    "minimum-stability": "dev",
     "description": "Get searchresults from a Google Custom Search Engine",
     "homepage": "https://github.com/spatie/googlesearch",
     "keywords":
@@ -30,5 +31,5 @@
             "Spatie\\GoogleSearch": "src/"
         }
     },
-    "minimum-stability": "stable"
+    //"minimum-stability": "stable"
 }
