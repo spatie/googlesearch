@@ -30,5 +30,5 @@
             "Spatie\\GoogleSearch": "src/"
         }
     },
-    "minimum-stability": "stable"
+    "minimum-stability": "dev"
 }
