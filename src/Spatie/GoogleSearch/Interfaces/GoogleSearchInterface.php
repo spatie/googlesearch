@@ -1,4 +1,6 @@
-<?php namespace Spatie\GoogleSearch\Interfaces;
+<?php
+
+namespace Spatie\GoogleSearch\Interfaces;
 
 interface GoogleSearchInterface
 {

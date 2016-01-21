@@ -1,4 +1,6 @@
-<?php namespace Spatie\GoogleSearch;
+<?php
+
+namespace Spatie\GoogleSearch;
 
 use Exception;
 use Spatie\GoogleSearch\Interfaces\GoogleSearchInterface;
@@ -15,12 +17,13 @@ class GoogleSearch implements GoogleSearchInterface
     }
 
     /**
+     * Get results from a Google Custom Search Engine.
      *
-     * Get results from a Google Custom Search Engine
+     * @param string $query
      *
-     * @param  string    $query
-     * @return array     An associative array of the parsed comment, whose keys are `name`,
-     *                         `url` and `snippet` and some others
+     * @return array An associative array of the parsed comment, whose keys are `name`,
+     *               `url` and `snippet` and some others
+     *
      * @throws Exception
      */
     public function getResults($query)
@@ -67,7 +70,7 @@ class GoogleSearch implements GoogleSearchInterface
                 $searchResults[$i]['offer']['price'] = $this->getPageMapProperty($item, 'offer', 'price');
                 $searchResults[$i]['offer']['pricecurrency'] = $this->getPageMapProperty($item, 'offer', 'pricecurrency');
 
-                $i++;
+                ++$i;
             }
         }
 
@@ -75,18 +78,19 @@ class GoogleSearch implements GoogleSearchInterface
     }
 
     /**
-     * Get a the value Pagemap property with the given name of the given type of the given item
+     * Get a the value Pagemap property with the given name of the given type of the given item.
      *
      * @param $item
      * @param $type
      * @param $attribute
+     *
      * @return string
      */
     public function getPageMapProperty($item, $type, $attribute)
     {
         $propertyArray = $item->PageMap->xpath('DataObject[@type="'.$type.'"]/Attribute[@name="'.$attribute.'"]/@value');
 
-        if (! count($propertyArray)) {
+        if (!count($propertyArray)) {
             return '';
         }
 

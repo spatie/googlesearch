@@ -1,10 +1,11 @@
-<?php namespace Spatie\GoogleSearch;
+<?php
+
+namespace Spatie\GoogleSearch;
 
 use Illuminate\Support\ServiceProvider;
 
 class GoogleSearchServiceProvider extends ServiceProvider
 {
-
     public function boot()
     {
         $this->publishes([
