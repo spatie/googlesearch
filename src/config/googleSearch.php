@@ -2,6 +2,6 @@
 
 return [
 
-   'searchEngineId' => ''
+   'searchEngineId' => '',
 
 ];
