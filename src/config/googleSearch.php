@@ -1,3 +1,7 @@
 <?php
 
-return array('searchEngineId' => '');
+return [
+
+   'searchEngineId' => ''
+
+];
