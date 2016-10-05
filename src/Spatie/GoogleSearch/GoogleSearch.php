@@ -53,6 +53,10 @@ class GoogleSearch implements GoogleSearchInterface
 
         $xml = simplexml_load_string($result->getBody());
 
+        if ($xml->ERROR) {
+            throw new Exception('XML indicated service error: '.$xml->ERROR);
+        }
+
         if ($xml->RES->R) {
             $i = 0;
             foreach ($xml->RES->R as $item) {
