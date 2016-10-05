@@ -2,6 +2,9 @@
 
 All notable changes to laravel-glide will be documented in this file.
 
+## 2.0.3 - 2016-10-05
+- throw exception when XML indicates an error
+
 ## 2.0.2
 - Allow use of Guzzle 6
 
