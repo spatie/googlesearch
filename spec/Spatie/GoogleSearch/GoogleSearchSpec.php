@@ -23,6 +23,6 @@ class GoogleSearchSpec extends ObjectBehavior
 
     public function it_should_throw_an_exception_when_no_valid_engine_id_is_set()
     {
-        $this->shouldThrow('\Exception')->during('getResults', array('test-query'));
+        $this->shouldThrow('\Exception')->during('getResults', ['test-query']);
     }
 }

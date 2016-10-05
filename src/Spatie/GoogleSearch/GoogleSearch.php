@@ -94,7 +94,7 @@ class GoogleSearch implements GoogleSearchInterface
     {
         $propertyArray = $item->PageMap->xpath('DataObject[@type="'.$type.'"]/Attribute[@name="'.$attribute.'"]/@value');
 
-        if (!count($propertyArray)) {
+        if (! count($propertyArray)) {
             return '';
         }
 
