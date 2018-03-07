@@ -88,5 +88,5 @@ $searchResults = GoogleSearch::getResults('The meaning of life'); // is 42
 
 When no results are found an empty array is returned.
 
-##About Spatie
+## About Spatie
 Spatie is a webdesign agency in Antwerp, Belgium. You'll find an overview of all our open source projects [on our website](https://spatie.be/opensource).
